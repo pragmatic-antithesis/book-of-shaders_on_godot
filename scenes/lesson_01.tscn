@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://r2yhrucbix5"]
+
+[ext_resource type="Shader" uid="uid://bmx53dcujjek8" path="res://shaders/lesson_01.gdshader" id="2_cauyb"]
+[ext_resource type="PackedScene" uid="uid://gkqjq7oj88xf" path="res://scenes/color_control.tscn" id="2_x3unn"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_x3unn"]
+shader = ExtResource("2_cauyb")
+shader_parameter/colors = Color(1, 0, 1, 1)
+
+[node name="lesson01" type="Node2D"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_x3unn")
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 376.0
+offset_top = 124.0
+offset_right = 776.0
+offset_bottom = 524.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorControl" parent="." node_paths=PackedStringArray("color_rect") instance=ExtResource("2_x3unn")]
+color_rect = NodePath("../ColorRect")

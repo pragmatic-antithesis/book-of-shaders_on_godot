@@ -1,0 +1,53 @@
+[gd_scene load_steps=6 format=3 uid="uid://ddaio7ejcyh50"]
+
+[ext_resource type="PackedScene" uid="uid://gkqjq7oj88xf" path="res://scenes/color_control.tscn" id="1_635op"]
+[ext_resource type="Shader" uid="uid://b2mxxa4v42o3s" path="res://shaders/lesson_02a.gdshader" id="2_t2gvl"]
+[ext_resource type="Shader" uid="uid://bnf4j4e46wkba" path="res://shaders/lesson_02b.gdshader" id="3_61l87"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_t2iqd"]
+shader = ExtResource("2_t2gvl")
+shader_parameter/base_colors = Color(0, 0, 0, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0yy6o"]
+shader = ExtResource("3_61l87")
+shader_parameter/base_colors = Color(0, 0, 0, 1)
+
+[node name="lesson_02" type="Node2D"]
+
+[node name="ColorControl" parent="." node_paths=PackedStringArray("color_rect") instance=ExtResource("1_635op")]
+offset_left = 176.0
+offset_top = 401.0
+offset_right = 304.0
+offset_bottom = 529.0
+color_rect = NodePath("ColorRect")
+
+[node name="ColorRect" type="ColorRect" parent="ColorControl"]
+material = SubResource("ShaderMaterial_t2iqd")
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -188.0
+offset_top = -433.0
+offset_right = 231.0
+offset_bottom = -137.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorControl2" parent="." node_paths=PackedStringArray("color_rect") instance=ExtResource("1_635op")]
+offset_left = 756.0
+offset_top = 92.0
+offset_right = 884.0
+offset_bottom = 220.0
+color_rect = NodePath("ColorRect2")
+
+[node name="ColorRect2" type="ColorRect" parent="ColorControl2"]
+material = SubResource("ShaderMaterial_0yy6o")
+layout_mode = 0
+offset_left = -121.0
+offset_top = 223.0
+offset_right = 317.0
+offset_bottom = 474.0
