@@ -36,18 +36,18 @@ void vertex() {
 }
 
 // Plot a line on Y using a value between 0.0-1.0
-float plot(vec2 st) {
+float plot(const vec2 st) {
 	//godot exclusive due to axis Y inversion:
-	st.y = 1.0 - st.y;
-	return smoothstep(smoothstep_1, smoothstep_2, abs(st.y - st.x));
+	const float inverted_y = 1.0 - st.y;
+	return smoothstep(smoothstep_1, smoothstep_2, abs(inverted_y - st.x));
 }
 
-float plot(vec2 st, float pct){
-	st.y = 1.0 - st.y;
-	return  smoothstep( pct - smoothstep_1, pct, st.y) - smoothstep( pct, pct+smoothstep_2 + 0.02, st.y);
+float plot(const vec2 st, const float pct){
+	const float inverted_y = 1.0 - st.y;
+	return  smoothstep( pct - smoothstep_1, pct, inverted_y) - smoothstep( pct, pct+smoothstep_2 + 0.02, inverted_y);
 }
 
-vec3 first_exercise(vec2 st, vec3 book_color) {
+vec3 first_exercise(const vec2 st, inout vec3 book_color) {
 	float divider = 0.0;
 
 	switch(dropdown_gradient) {
@@ -79,14 +79,14 @@ vec3 first_exercise(vec2 st, vec3 book_color) {
 	return (gradient_distribution - pct) * book_color + pct * vec3(base_colors.rgb);
 }
 
-vec3	second_exercise(vec2 st, vec3 book_color) {
+vec3	second_exercise(const vec2 st, inout vec3 book_color) {
 	float y = pow(st.x, pow_exponent);
 	book_color = vec3(y);
 	float pct = plot(st,y);
 	return (gradient_distribution - pct) * book_color+pct * vec3(base_colors.rgb);
 }
 
-vec3 third_exercise(vec2 st, vec3 book_color) {
+vec3 third_exercise(const vec2 st, inout vec3 book_color) {
 	float y = step(stepper,st.x);
 	book_color = vec3(y);
 
@@ -94,7 +94,7 @@ vec3 third_exercise(vec2 st, vec3 book_color) {
 	return (gradient_distribution - pct) * book_color+pct * vec3(base_colors.rgb);
 }
 
-vec3 fourth_exercise(vec2 st, vec3 book_color) {
+vec3 fourth_exercise(const vec2 st, inout vec3 book_color) {
 	float y = 0.0;
 	switch(mode) {
 		case 0:
