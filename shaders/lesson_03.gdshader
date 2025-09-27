@@ -40,6 +40,7 @@ float plot(const vec2 st) {
 	//godot exclusive due to axis Y inversion:
 	const float inverted_y = 1.0 - st.y;
 	return smoothstep(smoothstep_1, smoothstep_2, abs(inverted_y - st.x));
+	//return step(smoothstep_1, abs(inverted_y - st.x)); //-> this "inverts" the line placement
 }
 
 float plot(const vec2 st, const float pct){

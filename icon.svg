@@ -1,1 +1,210 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="128" height="128"><rect width="124" height="124" x="2" y="2" fill="#363d52" stroke="#212532" stroke-width="4" rx="14"/><g fill="#fff" transform="translate(12.322 12.322)scale(.101)"><path d="M105 673v33q407 354 814 0v-33z"/><path fill="#478cbf" d="m105 673 152 14q12 1 15 14l4 67 132 10 8-61q2-11 15-15h162q13 4 15 15l8 61 132-10 4-67q3-13 15-14l152-14V427q30-39 56-81-35-59-83-108-43 20-82 47-40-37-88-64 7-51 8-102-59-28-123-42-26 43-46 89-49-7-98 0-20-46-46-89-64 14-123 42 1 51 8 102-48 27-88 64-39-27-82-47-48 49-83 108 26 42 56 81zm0 33v39c0 276 813 276 814 0v-39l-134 12-5 69q-2 10-14 13l-162 11q-12 0-16-11l-10-65H446l-10 65q-4 11-16 11l-162-11q-12-3-14-13l-5-69z"/><path d="M483 600c0 34 58 34 58 0v-86c0-34-58-34-58 0z"/><circle cx="725" cy="526" r="90"/><circle cx="299" cy="526" r="90"/></g><g fill="#414042" transform="translate(12.322 12.322)scale(.101)"><circle cx="307" cy="532" r="60"/><circle cx="717" cy="532" r="60"/></g></svg>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="128"
+   height="128"
+   version="1.1"
+   id="svg6"
+   sodipodi:docname="icon.svg"
+   inkscape:version="1.4.2 (ebf0e940d0, 2025-05-08)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs6">
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath97">
+      <path
+         id="path97"
+         style="stroke-width:0.1;stroke-linecap:square;paint-order:markers fill stroke;stop-color:#000000"
+         d="m -880.82767,-187.29769 h 1640.84 v 73.28155 h -1640.84 z" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath25">
+      <rect
+         style="fill:#ff0000;stroke:none;stroke-width:3;stroke-linecap:square;stroke-linejoin:miter;paint-order:stroke markers fill;stop-color:#000000"
+         id="rect25-8"
+         width="78"
+         height="45.033199"
+         x="763.61322"
+         y="452.82422" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath5">
+      <path
+         id="path5"
+         style="stroke-width:0.1;stroke-linecap:square;paint-order:markers fill stroke;stop-color:#000000"
+         d="m 438.25066,553.76374 859.87054,0 v 201.39554 l -859.87054,0 z"
+         sodipodi:nodetypes="ccccc" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath82">
+      <path
+         id="path82"
+         style="stroke-width:0.1;stroke-linecap:square;paint-order:markers fill stroke;stop-color:#000000"
+         d="m 1736.6147,-745.57287 h 1589.4765 v 72.46715 H 1736.6147 Z" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath80">
+      <path
+         id="path80"
+         style="stroke-width:0.1;stroke-linecap:square;paint-order:markers fill stroke;stop-color:#000000"
+         d="m 1736.6147,-745.57287 h 1589.4765 v 72.46715 H 1736.6147 Z" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath73">
+      <rect
+         style="fill:#000000;stroke:none;stroke-width:0.999995;stroke-linecap:butt;stroke-linejoin:bevel;paint-order:stroke markers fill;stop-color:#000000"
+         id="rect73"
+         width="46.19186"
+         height="80.006783"
+         x="74.999985"
+         y="399.99661" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath52">
+      <path
+         id="path52"
+         style="stroke-width:0.1;stroke-linecap:square;paint-order:markers fill stroke;stop-color:#000000"
+         d="m -880.82767,-187.29769 h 1640.84 v 73.28155 h -1640.84 z" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath24">
+      <rect
+         style="fill:none;stroke:#000000;stroke-width:0.999999;stroke-linecap:butt;stroke-linejoin:bevel;paint-order:stroke markers fill;stop-color:#000000"
+         id="rect24"
+         width="44.999748"
+         height="77.937294"
+         x="251.53429"
+         y="222.73541" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath55">
+      <path
+         id="path55"
+         style="stroke-width:0.1;stroke-linecap:square;paint-order:markers fill stroke;stop-color:#000000"
+         d="m 1736.6147,-745.57287 h 1589.4765 v 72.46715 H 1736.6147 Z" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath33">
+      <rect
+         style="fill:#000000;stroke:none;stroke-width:0.999995;stroke-linecap:butt;stroke-linejoin:bevel;paint-order:stroke markers fill;stop-color:#000000"
+         id="rect33"
+         width="46.19186"
+         height="80.006783"
+         x="74.999985"
+         y="399.99661" />
+    </clipPath>
+    <pattern
+       inkscape:collect="always"
+       xlink:href="#ap101"
+       preserveAspectRatio="xMidYMid"
+       id="pattern28"
+       patternTransform="matrix(0.2,0,0,0.2,404.48247,34.885489)" />
+    <pattern
+       patternUnits="userSpaceOnUse"
+       preserveAspectRatio="xMidYMid"
+       width="377.95281"
+       height="377.95276"
+       patternTransform="translate(404.48247,34.885489) scale(0.2)"
+       style="fill:#000000"
+       id="ap101"
+       inkscape:collect="always"
+       inkscape:isstock="true"
+       inkscape:label="ap101">
+      <path
+         id="path41"
+         style="color:#000000;opacity:1;stroke-width:2.97601;-inkscape-stroke:none;paint-order:markers fill stroke"
+         d="M 130.28729,0 V 59.421109 H 59.421146 v 3.575614 67.290537 H 0 v 7.14354 h 59.421146 v 16.47851 H 0 v 7.14354 h 59.421146 v 55.85321 H 0 v 7.14351 h 59.421146 v 16.47854 H 0 v 7.14351 h 59.421146 v 70.86615 h 70.866144 v 59.41499 h 7.14353 v -59.41499 h 16.47852 v 59.41499 h 7.14353 v -59.41499 h 55.84554 v 59.41499 h 7.1435 v -59.41499 h 16.47855 v 59.41499 h 7.1435 v -59.41499 h 70.86614 v -70.86615 h 59.42271 v -7.14351 H 318.5301 v -16.47854 h 59.42271 v -7.14351 H 318.5301 v -55.85321 h 59.42271 v -7.14354 H 318.5301 V 137.4308 h 59.42271 v -7.14354 H 318.5301 V 59.421109 H 247.66396 V 0 h -7.1435 V 59.421109 H 224.10799 V 0 h -7.1435 V 59.421109 H 161.05287 V 0 h -7.14353 V 59.421109 H 137.43082 V 0 Z M 66.56468,66.564658 h 63.72261 v 40.100552 h -23.62205 v 3.57561 20.04644 H 66.56468 Z m 70.86614,0 h 15.47852 v 40.100552 h -16.47852 z m 22.62205,0 h 51.91162 v 40.100552 h -51.91162 z m 59.05512,0 h 20.41247 v 40.100552 h -20.41247 z m 27.55597,0 H 311.3866 V 130.28726 H 271.286 V 106.66521 H 245.66396 Z M 113.80877,113.80875 h 16.47852 v 16.47851 h -16.47852 z m 23.62205,0 h 16.47852 v 40.10056 H 113.80877 V 137.4308 h 23.62205 z m 23.62205,0 h 24.3479 v 71.5997 h -71.592 v -24.3556 h 47.2441 z m 31.49144,0 h 20.42018 v 47.2441 h 51.17802 v 24.3556 h -71.5982 z m 27.56368,0 h 20.41247 v 23.62205 h 23.62205 v 16.47851 h -44.03452 z m 27.55597,0 h 16.47855 v 16.47851 H 247.66396 Z M 66.56468,137.4308 h 40.10056 v 16.47851 H 66.56468 Z m 204.72132,0 h 40.1006 v 16.47851 H 271.286 Z M 66.56468,161.05285 h 40.10056 v 55.85321 H 66.56468 Z m 204.72132,0 h 40.1006 v 55.85321 H 271.286 Z m -157.47723,31.49912 h 71.592 v 71.59819 h -24.3479 v -47.2441 h -47.2441 z m 78.73554,0 h 71.5982 v 24.35409 h -47.2441 v 47.2441 h -24.3541 z m -125.97963,31.4976 h 40.10056 v 16.47854 H 66.56468 Z m 47.24409,0 h 40.10057 v 40.10059 h -16.47852 v -23.62205 h -23.62205 z m 110.23314,0 h 40.1006 v 16.47854 h -23.62205 v 23.62205 h -16.47855 z m 47.24409,0 h 40.1006 v 16.47854 H 271.286 Z M 66.56468,247.67162 h 40.10056 v 23.62205 h 23.62205 v 40.10058 H 66.56468 Z m 47.24409,0 h 16.47852 v 16.47854 h -16.47852 z m 133.85519,0 h 16.47855 v 16.47854 h -16.47855 z m 23.62204,0 h 40.1006 v 63.72263 H 247.66396 V 271.29367 H 271.286 Z m -133.85518,23.62205 h 16.47852 v 40.10058 h -16.47852 z m 23.62205,0 h 55.84554 v 40.10058 h -55.84554 z m 62.98904,0 h 16.47855 v 40.10058 h -16.47855 z" />
+    </pattern>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath54">
+      <path
+         id="path54"
+         style="stroke-width:0.0999999;stroke-linecap:square;paint-order:markers fill stroke;stop-color:#000000"
+         d="m 1691.1994,-792.32001 h 1634.8919 v 92.82806 H 1691.1994 Z" />
+    </clipPath>
+  </defs>
+  <sodipodi:namedview
+     id="namedview6"
+     pagecolor="#505050"
+     bordercolor="#eeeeee"
+     borderopacity="1"
+     inkscape:showpageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#505050"
+     inkscape:zoom="8.7109375"
+     inkscape:cx="64"
+     inkscape:cy="64"
+     inkscape:window-width="2560"
+     inkscape:window-height="1367"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg6" />
+  <rect
+     width="124"
+     height="124"
+     x="2"
+     y="2"
+     fill="#363d52"
+     stroke="#212532"
+     stroke-width="4"
+     rx="14"
+     id="rect1"
+     style="fill:url(#pattern28);fill-opacity:1" />
+  <g
+     fill="#fff"
+     transform="translate(12.322 12.322)scale(.101)"
+     id="g4">
+    <path
+       d="M105 673v33q407 354 814 0v-33z"
+       id="path1" />
+    <path
+       fill="#478cbf"
+       d="m 105,673 152,14 q 12,1 15,14 l 4,67 132,10 8,-61 q 2,-11 15,-15 h 162 q 13,4 15,15 l 8,61 132,-10 4,-67 q 3,-13 15,-14 L 919,673 V 427 q 30,-39 56,-81 -35,-59 -83,-108 -43,20 -82,47 -40,-37 -88,-64 7,-51 8,-102 -59,-28 -123,-42 -26,43 -46,89 -49,-7 -98,0 -20,-46 -46,-89 -64,14 -123,42 1,51 8,102 -48,27 -88,64 -39,-27 -82,-47 -48,49 -83,108 26,42 56,81 z m 0,33 v 39 c 0,276 813,276 814,0 v -39 l -134,12 -5,69 q -2,10 -14,13 l -162,11 q -12,0 -16,-11 L 578,735 H 446 l -10,65 q -4,11 -16,11 L 258,800 q -12,-3 -14,-13 l -5,-69 z"
+       id="path2"
+       style="mix-blend-mode:normal;fill:#a90091;fill-opacity:1" />
+    <path
+       d="M483 600c0 34 58 34 58 0v-86c0-34-58-34-58 0z"
+       id="path3" />
+    <circle
+       cx="725"
+       cy="526"
+       r="90"
+       id="circle3" />
+    <circle
+       cx="299"
+       cy="526"
+       r="90"
+       id="circle4" />
+  </g>
+  <g
+     fill="#414042"
+     transform="translate(12.322 12.322)scale(.101)"
+     id="g6">
+    <circle
+       cx="307"
+       cy="532"
+       r="60"
+       id="circle5" />
+    <circle
+       cx="717"
+       cy="532"
+       r="60"
+       id="circle6" />
+  </g>
+</svg>
