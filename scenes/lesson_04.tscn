@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=3 uid="uid://dqtwvbfrm2q0"]
+
+[ext_resource type="Script" uid="uid://byfyitv6kgyg2" path="res://scripts/color_control.gd" id="1_bnvkc"]
+[ext_resource type="Shader" uid="uid://bqum0wrvwbo2y" path="res://shaders/lesson_04.gdshader" id="2_1jmpb"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_lxcme"]
+shader = ExtResource("2_1jmpb")
+shader_parameter/exercise = 1
+shader_parameter/colorA = Vector3(0.149, 0.141, 0.912)
+shader_parameter/colorB = Vector3(1, 0.833, 0.224)
+shader_parameter/module = false
+
+[node name="lesson_04" type="Node2D"]
+
+[node name="ColorControl" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_bnvkc")
+metadata/_custom_type_script = "uid://byfyitv6kgyg2"
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect" type="ColorRect" parent="ColorControl"]
+material = SubResource("ShaderMaterial_lxcme")
+layout_mode = 1
+offset_left = 373.0
+offset_top = 161.0
+offset_right = 879.0
+offset_bottom = 493.0
