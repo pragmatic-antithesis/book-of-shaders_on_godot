@@ -18,18 +18,18 @@ uniform float l27pow_exponent = 0.5;
 uniform vec3 sunsetA = vec3(0.988, 0.552, 0.235);
 uniform vec3 sunsetB = vec3(0.670, 0.125, 0.447);
 uniform vec3 sunsetC = vec3(0.137, 0.231, 0.623);
-uniform float turner_rightsmoothlow = 0.6;
+uniform float turner_rightsmoothlow = 0.05;
 uniform float turner_rightsmoothigh = 0.8;
 uniform float turner_midsmoothlow = 0.3;
 uniform float turner_midsmoothigh = 0.5;
-uniform float sunset_mask_constrain = 0.5;
+uniform float sunset_mask_constrain = 0.05;
 uniform float sunset_mask_min = 0.0;
 uniform float sunset_mask_max = 1.0;
-uniform float sunset_vert_l_smooth_low = 0.2;
-uniform float sunset_vert_l_smooth_high = 0.8;
-uniform float sunset_vert_r_smooth_low = 0.8;
-uniform float sunset_vert_r_smooth_high = 1.0;
-uniform float sunset_vert_inverter = 1.0;
+uniform float sunset_vert_l_smooth_low = 0.0;
+uniform float sunset_vert_l_smooth_high = 0.5;
+uniform float sunset_vert_r_smooth_low = 0.6;
+uniform float sunset_vert_r_smooth_high = 0.85;
+uniform float sunset_vert_inverter = 1.5;
 group_uniforms;
 
 
