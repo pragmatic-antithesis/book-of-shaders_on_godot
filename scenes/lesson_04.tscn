@@ -8,7 +8,28 @@ shader = ExtResource("2_1jmpb")
 shader_parameter/exercise = 1
 shader_parameter/colorA = Vector3(0.149, 0.141, 0.912)
 shader_parameter/colorB = Vector3(1, 0.833, 0.224)
-shader_parameter/module = false
+shader_parameter/module = 2
+shader_parameter/line25 = false
+shader_parameter/l25low = 0.0
+shader_parameter/l25high = 1.0
+shader_parameter/line26n27 = false
+shader_parameter/l26pi_multiplier = 1.0
+shader_parameter/l27pow_exponent = 0.5
+shader_parameter/sunsetA = Vector3(0.988, 0.552, 0.235)
+shader_parameter/sunsetB = Vector3(0.67, 0.125, 0.447)
+shader_parameter/sunsetC = Vector3(0.137, 0.231, 0.623)
+shader_parameter/turner_rightsmoothlow = 0.6
+shader_parameter/turner_rightsmoothigh = 0.8
+shader_parameter/turner_midsmoothlow = 0.3
+shader_parameter/turner_midsmoothigh = 0.5
+shader_parameter/sunset_mask_constrain = 0.5
+shader_parameter/sunset_mask_min = 0.0
+shader_parameter/sunset_mask_max = 1.0
+shader_parameter/sunset_vert_l_smooth_low = 0.2
+shader_parameter/sunset_vert_l_smooth_high = 0.8
+shader_parameter/sunset_vert_r_smooth_low = 0.8
+shader_parameter/sunset_vert_r_smooth_high = 1.0
+shader_parameter/sunset_vert_inverter = 1.0
 
 [node name="lesson_04" type="Node2D"]
 

@@ -8,7 +8,28 @@ uniform vec3 colorB = vec3(1.000,0.833,0.224);
 group_uniforms;
 
 group_uniforms exercise_b;
-uniform bool module = false;
+uniform int module: hint_enum("Default: 0", "Lines25-27:1", "Turner:2", "D:3") = 0;
+uniform bool line25 = false;
+uniform float l25low = 0.0;
+uniform float l25high = 1.0;
+uniform bool line26n27 = false;
+uniform float l26pi_multiplier = 1.0;
+uniform float l27pow_exponent = 0.5;
+uniform vec3 sunsetA = vec3(0.988, 0.552, 0.235);
+uniform vec3 sunsetB = vec3(0.670, 0.125, 0.447);
+uniform vec3 sunsetC = vec3(0.137, 0.231, 0.623);
+uniform float turner_rightsmoothlow = 0.6;
+uniform float turner_rightsmoothigh = 0.8;
+uniform float turner_midsmoothlow = 0.3;
+uniform float turner_midsmoothigh = 0.5;
+uniform float sunset_mask_constrain = 0.5;
+uniform float sunset_mask_min = 0.0;
+uniform float sunset_mask_max = 1.0;
+uniform float sunset_vert_l_smooth_low = 0.2;
+uniform float sunset_vert_l_smooth_high = 0.8;
+uniform float sunset_vert_r_smooth_low = 0.8;
+uniform float sunset_vert_r_smooth_high = 1.0;
+uniform float sunset_vert_inverter = 1.0;
 group_uniforms;
 
 
@@ -30,26 +51,59 @@ vec3 first_exercise() {
 
 vec3 second_exercise_module(float stx) {
 	vec3 pct = vec3(stx);
-	if (!module)
+	if (module == 0)
 		return pct;
-	pct.r = smoothstep(0.0,1.0, stx);
-	pct.g = sin(stx*PI);
-	pct.b = pow(stx,0.5);
+	if (module == 1) {
+		if (line25)
+			pct.r = smoothstep(l25low,l25high, stx);
+		if (line26n27) {
+			pct.g = sin(stx*PI*l26pi_multiplier);
+			pct.b = pow(stx,l27pow_exponent);
+		}
+	}
 	return pct;
 }
 
+//vec3 exercise_turner(vec2 st) {
+	//float t = st.y;
+	//vec3 color = mix(sunsetA, sunsetB, t);
+	//color = mix(color, sunsetC, t*t);
+	//return color;
+//}
+
+vec3 exercise_turner(vec2 st) {
+	float x = st.x;
+	float y = st.y;
+
+	vec3 color = sunsetC;
+
+	float rightBand   = smoothstep(turner_rightsmoothlow, turner_rightsmoothigh, x);
+	float midBand     = smoothstep(turner_midsmoothlow,turner_midsmoothigh, x);
+	float sunsetMask  = clamp(rightBand + sunset_mask_constrain * midBand, sunset_mask_min, sunset_mask_max);
+
+	float vertical = smoothstep(sunset_vert_l_smooth_low, sunset_vert_l_smooth_high, y) * (sunset_vert_inverter - smoothstep(sunset_vert_r_smooth_low, sunset_vert_r_smooth_high, y));
+
+	float mask = sunsetMask * vertical;
+
+	vec3 grad = mix(sunsetA, sunsetB, y * y);
+	color = mix(color, grad, mask);
+
+	return color;
+}
+
+
+
 vec3 second_exercise(vec2 st) {
-	//gl_FragCoord.xy/u_resolution.xy;
 	vec3 color = vec3(0.0);
 	vec3 pct = second_exercise_module(st.x);
 
 	color = mix(colorA, colorB, pct);
 
-	// Plot transition lines for each channel
 	color = mix(color,vec3(1.0,0.0,0.0),plot(st,pct.r));
 	color = mix(color,vec3(0.0,1.0,0.0),plot(st,pct.g));
 	color = mix(color,vec3(0.0,0.0,1.0),plot(st,pct.b));
-
+	if (module == 2)
+		return exercise_turner(st);
 	return color;
 }
 
