@@ -54,19 +54,21 @@ vec3 second_exercise_module(float stx) {
 uniform vec3 sun = vec3(0.988, 0.552, 0.235);
 uniform vec3 sky = vec3(0.670, 0.125, 0.447);
 uniform vec3 sea = vec3(0.137, 0.231, 0.623);
-uniform float arch_start = 0.3;       // where the arch begins on X (0..1)
-uniform float arch_width = 0.6;       // how wide the arch is (0..1)
-uniform float arch_amp = 0.8;         // arch amplitude (height)
-uniform float arch_base = 0.0;        // vertical offset (moves entire arch up/down)
-uniform float arch_soft_low = 0.03;   // softness below the arch for smoothstep
-uniform float arch_soft_high = 0.03;  // softness above the arch for smoothstep
-uniform float pi_mod = 1.0;
+uniform float arch_start = 0.4; //works sort of as intended, but the beginning of the wave is really sharp and there is no color mixing
+uniform float arch_width = 0.5; // is this the best way? seems like I need to tweak both the start and the width for a different placement
+uniform float arch_amp = 0.75;
+uniform float arch_soft_low = 0.1; // this increments in a very weird way, but it works a bit
+uniform float arch_soft_high = 0.03; // this increments poorly, there is leak from the top of the screen on the faintest adjustment
+uniform float arch_shape = 0.4; // works, but the more I increase it, the more it becomes sharp and less mixed
 
 vec3 exercise_turner(vec2 st) {
     vec3 base = sun;
 
-    // choose wave generation mode
-    float wave = sin(((st.x - arch_start) / arch_width) * PI) * (arch_amp + arch_base);
+    float x = (st.x - arch_start) / arch_width;
+    x = clamp(x, 0.0, 1.0);
+    float s = sin(x * PI);
+    s = pow(s, arch_shape);
+    float wave = s * arch_amp;
 
     // mask around the wave (controls how sharp/soft the visible band is)
     float mask = smoothstep(wave - arch_soft_low, wave + arch_soft_high, st.y);
