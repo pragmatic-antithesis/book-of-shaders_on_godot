@@ -15,21 +15,6 @@ uniform float l25high = 1.0;
 uniform bool line26n27 = false;
 uniform float l26pi_multiplier = 1.0;
 uniform float l27pow_exponent = 0.5;
-uniform vec3 sunsetA = vec3(0.988, 0.552, 0.235);
-uniform vec3 sunsetB = vec3(0.670, 0.125, 0.447);
-uniform vec3 sunsetC = vec3(0.137, 0.231, 0.623);
-uniform float turner_rightsmoothlow = 0.05;
-uniform float turner_rightsmoothigh = 0.8;
-uniform float turner_midsmoothlow = 0.3;
-uniform float turner_midsmoothigh = 0.5;
-uniform float sunset_mask_constrain = 0.05;
-uniform float sunset_mask_min = 0.0;
-uniform float sunset_mask_max = 1.0;
-uniform float sunset_vert_l_smooth_low = 0.0;
-uniform float sunset_vert_l_smooth_high = 0.5;
-uniform float sunset_vert_r_smooth_low = 0.6;
-uniform float sunset_vert_r_smooth_high = 0.85;
-uniform float sunset_vert_inverter = 1.5;
 group_uniforms;
 
 
@@ -38,8 +23,10 @@ void vertex() {
 }
 
 float plot (vec2 st, float pct) {
-  return  smoothstep( pct-0.01, pct, st.y) -
-          smoothstep( pct, pct+0.01, st.y);
+	float y = 1.0 - st.y; // flip Godot's UV.y to match GLSL
+	//y = st.y;
+	return  smoothstep( pct-0.01, pct, y) -
+	        smoothstep( pct, pct+0.01, y);
 }
 
 vec3 first_exercise() {
@@ -64,33 +51,34 @@ vec3 second_exercise_module(float stx) {
 	return pct;
 }
 
-//vec3 exercise_turner(vec2 st) {
-	//float t = st.y;
-	//vec3 color = mix(sunsetA, sunsetB, t);
-	//color = mix(color, sunsetC, t*t);
-	//return color;
-//}
+uniform vec3 sun = vec3(0.988, 0.552, 0.235);
+uniform vec3 sky = vec3(0.670, 0.125, 0.447);
+uniform vec3 sea = vec3(0.137, 0.231, 0.623);
+uniform float arch_start = 0.3;       // where the arch begins on X (0..1)
+uniform float arch_width = 0.6;       // how wide the arch is (0..1)
+uniform float arch_amp = 0.8;         // arch amplitude (height)
+uniform float arch_base = 0.0;        // vertical offset (moves entire arch up/down)
+uniform float arch_soft_low = 0.03;   // softness below the arch for smoothstep
+uniform float arch_soft_high = 0.03;  // softness above the arch for smoothstep
+uniform float pi_mod = 1.0;
 
 vec3 exercise_turner(vec2 st) {
-	float x = st.x;
-	float y = st.y;
+    vec3 base = sun;
 
-	vec3 color = sunsetC;
+    // choose wave generation mode
+    float wave = sin(((st.x - arch_start) / arch_width) * PI) * (arch_amp + arch_base);
 
-	float rightBand   = smoothstep(turner_rightsmoothlow, turner_rightsmoothigh, x);
-	float midBand     = smoothstep(turner_midsmoothlow,turner_midsmoothigh, x);
-	float sunsetMask  = clamp(rightBand + sunset_mask_constrain * midBand, sunset_mask_min, sunset_mask_max);
+    // mask around the wave (controls how sharp/soft the visible band is)
+    float mask = smoothstep(wave - arch_soft_low, wave + arch_soft_high, st.y);
 
-	float vertical = smoothstep(sunset_vert_l_smooth_low, sunset_vert_l_smooth_high, y) * (sunset_vert_inverter - smoothstep(sunset_vert_r_smooth_low, sunset_vert_r_smooth_high, y));
+    // vertical gradient for warm->cool blending
+    vec3 grad = mix(sky, sea, st.y);
 
-	float mask = sunsetMask * vertical;
+    // blend base and grad using the wave mask
+    vec3 color = mix(base, grad, mask);
 
-	vec3 grad = mix(sunsetA, sunsetB, y * y);
-	color = mix(color, grad, mask);
-
-	return color;
+    return color;
 }
-
 
 
 vec3 second_exercise(vec2 st) {

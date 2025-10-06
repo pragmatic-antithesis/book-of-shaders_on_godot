@@ -6,30 +6,25 @@
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_lxcme"]
 shader = ExtResource("2_1jmpb")
 shader_parameter/exercise = 1
+shader_parameter/sun = Vector3(0.988, 0.552, 0.235)
+shader_parameter/sky = Vector3(0.67, 0.125, 0.447)
+shader_parameter/sea = Vector3(0.137, 0.231, 0.623)
+shader_parameter/arch_start = 0.3
+shader_parameter/arch_width = 0.6
+shader_parameter/arch_amp = 0.8
+shader_parameter/arch_base = 0.0
+shader_parameter/arch_soft_low = 0.03
+shader_parameter/arch_soft_high = 0.03
+shader_parameter/pi_mod = 1.0
 shader_parameter/colorA = Vector3(0.149, 0.141, 0.912)
 shader_parameter/colorB = Vector3(1, 0.833, 0.224)
 shader_parameter/module = 2
 shader_parameter/line25 = false
 shader_parameter/l25low = 0.0
 shader_parameter/l25high = 1.0
-shader_parameter/line26n27 = false
+shader_parameter/line26n27 = true
 shader_parameter/l26pi_multiplier = 1.0
 shader_parameter/l27pow_exponent = 0.5
-shader_parameter/sunsetA = Vector3(0.988, 0.552, 0.235)
-shader_parameter/sunsetB = Vector3(0.67, 0.125, 0.447)
-shader_parameter/sunsetC = Vector3(0.137, 0.231, 0.623)
-shader_parameter/turner_rightsmoothlow = 0.05
-shader_parameter/turner_rightsmoothigh = 0.8
-shader_parameter/turner_midsmoothlow = 0.3
-shader_parameter/turner_midsmoothigh = 0.5
-shader_parameter/sunset_mask_constrain = 0.05
-shader_parameter/sunset_mask_min = 0.0
-shader_parameter/sunset_mask_max = 1.0
-shader_parameter/sunset_vert_l_smooth_low = 0.0
-shader_parameter/sunset_vert_l_smooth_high = 0.5
-shader_parameter/sunset_vert_r_smooth_low = 0.6
-shader_parameter/sunset_vert_r_smooth_high = 0.85
-shader_parameter/sunset_vert_inverter = 1.5
 
 [node name="lesson_04" type="Node2D"]
 
