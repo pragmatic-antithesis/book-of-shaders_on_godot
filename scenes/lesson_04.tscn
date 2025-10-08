@@ -7,23 +7,38 @@
 shader = ExtResource("2_1jmpb")
 shader_parameter/exercise = 1
 shader_parameter/sun = Vector3(0.988, 0.552, 0.235)
-shader_parameter/sky = Vector3(0.67, 0.125, 0.447)
+shader_parameter/sky = Vector3(0.67, 0.381, 0.447)
 shader_parameter/sea = Vector3(0.137, 0.231, 0.623)
-shader_parameter/arch_start = 0.4
-shader_parameter/arch_width = 0.5
-shader_parameter/arch_amp = 0.75
-shader_parameter/arch_soft_low = 0.1
-shader_parameter/arch_soft_high = 0.03
-shader_parameter/arch_shape = 0.4
 shader_parameter/colorA = Vector3(0.149, 0.141, 0.912)
 shader_parameter/colorB = Vector3(1, 0.833, 0.224)
-shader_parameter/module = 2
+shader_parameter/module = 4
 shader_parameter/line25 = false
 shader_parameter/l25low = 0.0
 shader_parameter/l25high = 1.0
 shader_parameter/line26n27 = true
 shader_parameter/l26pi_multiplier = 1.0
 shader_parameter/l27pow_exponent = 0.5
+shader_parameter/arch_start = 0.4
+shader_parameter/arch_width = 0.5
+shader_parameter/arch_amp = 0.75
+shader_parameter/arch_soft_low = 0.1
+shader_parameter/arch_soft_high = 0.03
+shader_parameter/arch_shape = 0.4
+shader_parameter/sunrise = Vector3(1, 0.6, 0.3)
+shader_parameter/night = Vector3(0.05, 0.05, 0.2)
+shader_parameter/midpoint = 0.5
+shader_parameter/oscilation_amplitude = 0.75
+shader_parameter/speed_factor = 2.5
+shader_parameter/red = Vector3(1, 0, 0)
+shader_parameter/orange = Vector3(1, 0.5, 0)
+shader_parameter/yellow = Vector3(1, 1, 0)
+shader_parameter/green = Vector3(0, 1, 0)
+shader_parameter/blue = Vector3(0, 0, 1)
+shader_parameter/indigo = Vector3(0.29, 0, 0.51)
+shader_parameter/violet = Vector3(0.56, 0, 1)
+shader_parameter/center = Vector2(0.5, -0.42)
+shader_parameter/radius = 1.2
+shader_parameter/thickness = 0.42
 
 [node name="lesson_04" type="Node2D"]
 

@@ -8,7 +8,7 @@ uniform vec3 colorB = vec3(1.000,0.833,0.224);
 group_uniforms;
 
 group_uniforms exercise_b;
-uniform int module: hint_enum("Default: 0", "Lines25-27:1", "Turner:2", "D:3") = 0;
+uniform int module: hint_enum("Default: 0", "Lines25-27:1", "Turner:2", "Suncycle:3", "Rainbow:4") = 0;
 uniform bool line25 = false;
 uniform float l25low = 0.0;
 uniform float l25high = 1.0;
@@ -52,14 +52,17 @@ vec3 second_exercise_module(float stx) {
 }
 
 uniform vec3 sun = vec3(0.988, 0.552, 0.235);
-uniform vec3 sky = vec3(0.670, 0.125, 0.447);
+uniform vec3 sky = vec3(0.670, 0.381, 0.447);
 uniform vec3 sea = vec3(0.137, 0.231, 0.623);
-uniform float arch_start = 0.4; //works sort of as intended, but the beginning of the wave is really sharp and there is no color mixing
-uniform float arch_width = 0.5; // is this the best way? seems like I need to tweak both the start and the width for a different placement
+
+group_uniforms exercise_b.turner;
+uniform float arch_start = 0.4;
+uniform float arch_width = 0.5;
 uniform float arch_amp = 0.75;
-uniform float arch_soft_low = 0.1; // this increments in a very weird way, but it works a bit
-uniform float arch_soft_high = 0.03; // this increments poorly, there is leak from the top of the screen on the faintest adjustment
-uniform float arch_shape = 0.4; // works, but the more I increase it, the more it becomes sharp and less mixed
+uniform float arch_soft_low = 0.1;
+uniform float arch_soft_high = 0.03;
+uniform float arch_shape = 0.4;
+group_uniforms;
 
 vec3 exercise_turner(vec2 st) {
     vec3 base = sun;
@@ -70,17 +73,60 @@ vec3 exercise_turner(vec2 st) {
     s = pow(s, arch_shape);
     float wave = s * arch_amp;
 
-    // mask around the wave (controls how sharp/soft the visible band is)
     float mask = smoothstep(wave - arch_soft_low, wave + arch_soft_high, st.y);
 
-    // vertical gradient for warm->cool blending
     vec3 grad = mix(sky, sea, st.y);
 
-    // blend base and grad using the wave mask
     vec3 color = mix(base, grad, mask);
-
+	step(0.5, st.x);
     return color;
 }
+
+group_uniforms exercise_b.suncycle;
+uniform vec3 sunrise = vec3(1.0, 0.6, 0.3);
+uniform vec3 night = vec3(0.05, 0.05, 0.2);
+uniform float midpoint = 0.5;
+uniform float oscilation_amplitude = 0.75;
+uniform float speed_factor = 2.5;
+group_uniforms;
+
+vec3 exercise_sunrise(vec2 st) {
+    float t = midpoint + oscilation_amplitude*sin(TIME * speed_factor);
+    vec3 base = mix(night, sunrise, t);
+    return mix(base, sky, st.y);
+}
+group_uniforms exercise_b.rainbow;
+uniform vec3 red    = vec3(1.0,0.0,0.0);
+uniform vec3 orange = vec3(1.0,0.5,0.0);
+uniform vec3 yellow = vec3(1.0,1.0,0.0);
+uniform vec3 green  = vec3(0.0,1.0,0.0);
+uniform vec3 blue   = vec3(0.0,0.0,1.0);
+uniform vec3 indigo = vec3(0.29,0.0,0.51);
+uniform vec3 violet = vec3(0.56,0.0,1.0);
+
+// controls
+uniform vec2  center = vec2(0.5, -0.42); // position the circle center below
+uniform float radius = 1.20;             // main rainbow radius
+uniform float thickness = 0.42;         // total thickness of all color bands
+group_uniforms;
+
+vec3 exercise_rainbow(vec2 st) {
+    vec3 rainbow[7] = vec3[](red, orange, yellow, green, blue, indigo, violet);
+
+    // flip vertically so the arch opens upward
+    vec2 p = vec2(st.x, 1.0 - st.y);
+
+    float d = distance(p, center);
+
+    float band_index = (radius - d) / thickness * 7.0;
+    if (band_index < 0.0 || band_index > 7.0) {
+        return vec3(0.0);
+    }
+
+    band_index = clamp(band_index, 0.0, 6.999);
+    return rainbow[int(band_index)];
+}
+
 
 
 vec3 second_exercise(vec2 st) {
@@ -94,6 +140,10 @@ vec3 second_exercise(vec2 st) {
 	color = mix(color,vec3(0.0,0.0,1.0),plot(st,pct.b));
 	if (module == 2)
 		return exercise_turner(st);
+	if (module == 3)
+		return exercise_sunrise(st);
+	if (module == 4)
+		return exercise_rainbow(st);
 	return color;
 }
 
