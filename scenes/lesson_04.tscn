@@ -11,7 +11,7 @@ shader_parameter/sky = Vector3(0.67, 0.381, 0.447)
 shader_parameter/sea = Vector3(0.137, 0.231, 0.623)
 shader_parameter/colorA = Vector3(0.149, 0.141, 0.912)
 shader_parameter/colorB = Vector3(1, 0.833, 0.224)
-shader_parameter/module = 4
+shader_parameter/module = 5
 shader_parameter/line25 = false
 shader_parameter/l25low = 0.0
 shader_parameter/l25high = 1.0
@@ -39,6 +39,11 @@ shader_parameter/violet = Vector3(0.56, 0, 1)
 shader_parameter/center = Vector2(0.5, -0.42)
 shader_parameter/radius = 1.2
 shader_parameter/thickness = 0.42
+shader_parameter/softness = 0.15
+shader_parameter/s1 = Vector3(0.357, 0.812, 0.98)
+shader_parameter/s2 = Vector3(1, 1, 1)
+shader_parameter/s3 = Vector3(0.961, 0.671, 0.725)
+shader_parameter/bandos = 0.2
 
 [node name="lesson_04" type="Node2D"]
 

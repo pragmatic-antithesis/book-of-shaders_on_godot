@@ -8,7 +8,7 @@ uniform vec3 colorB = vec3(1.000,0.833,0.224);
 group_uniforms;
 
 group_uniforms exercise_b;
-uniform int module: hint_enum("Default: 0", "Lines25-27:1", "Turner:2", "Suncycle:3", "Rainbow:4") = 0;
+uniform int module: hint_enum("Default: 0", "Lines25-27:1", "Turner:2", "Suncycle:3", "Rainbow:4", "Flag:5") = 0;
 uniform bool line25 = false;
 uniform float l25low = 0.0;
 uniform float l25high = 1.0;
@@ -78,7 +78,7 @@ vec3 exercise_turner(vec2 st) {
     vec3 grad = mix(sky, sea, st.y);
 
     vec3 color = mix(base, grad, mask);
-	step(0.5, st.x);
+
     return color;
 }
 
@@ -105,9 +105,10 @@ uniform vec3 indigo = vec3(0.29,0.0,0.51);
 uniform vec3 violet = vec3(0.56,0.0,1.0);
 
 // controls
-uniform vec2  center = vec2(0.5, -0.42); // position the circle center below
-uniform float radius = 1.20;             // main rainbow radius
-uniform float thickness = 0.42;         // total thickness of all color bands
+uniform vec2  center = vec2(0.5, -0.42);
+uniform float radius = 1.20;
+uniform float thickness = 0.42;
+uniform float softness = 0.15;
 group_uniforms;
 
 vec3 exercise_rainbow(vec2 st) {
@@ -122,12 +123,22 @@ vec3 exercise_rainbow(vec2 st) {
     if (band_index < 0.0 || band_index > 7.0) {
         return vec3(0.0);
     }
-
-    band_index = clamp(band_index, 0.0, 6.999);
     return rainbow[int(band_index)];
 }
 
+group_uniforms exercise_b.flag;
+uniform vec3 s1 = vec3(0.357,0.812,0.98);
+uniform vec3 s2=  vec3(1.0,1.0,1.0);
+uniform vec3 s3 = vec3(0.961,0.671,0.725);
+uniform float bandos = 0.2;
+group_uniforms;
 
+vec3 exercise_flag(vec2 st) {
+    vec3 stripes[5] = vec3[](s1, s3, s2, s3, s1);
+    int band = int(floor(st.y / bandos));
+    band = clamp(band, 0, 4);
+    return stripes[band];
+}
 
 vec3 second_exercise(vec2 st) {
 	vec3 color = vec3(0.0);
@@ -144,6 +155,8 @@ vec3 second_exercise(vec2 st) {
 		return exercise_sunrise(st);
 	if (module == 4)
 		return exercise_rainbow(st);
+	if (module == 5)
+		return exercise_flag(st);
 	return color;
 }
 
