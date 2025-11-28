@@ -1,6 +1,6 @@
 shader_type canvas_item;
 
-uniform int exercise: hint_enum("A: 0", "B:1", "C:2", "D:3") = 0;
+uniform int exercise: hint_enum("A: 0", "B:1") = 0;
 
 group_uniforms exercise_a;
 uniform vec3 colorA = vec3(0.149,0.141,0.912);
