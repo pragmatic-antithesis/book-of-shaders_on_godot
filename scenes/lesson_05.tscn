@@ -1,0 +1,38 @@
+[gd_scene load_steps=4 format=3 uid="uid://d3esgse3w0s78"]
+
+[ext_resource type="Script" uid="uid://byfyitv6kgyg2" path="res://scripts/color_control.gd" id="1_80bit"]
+[ext_resource type="Shader" uid="uid://d1al2wfl2l6s2" path="res://shaders/lesson_05.gdshader" id="2_80bit"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_lxcme"]
+shader = ExtResource("2_80bit")
+shader_parameter/exercise = 2
+shader_parameter/thickness = 0.23
+shader_parameter/top_right = true
+shader_parameter/bottom_left = true
+shader_parameter/center = Vector2(0.5, 0.5)
+shader_parameter/size = Vector2(0.2, 0.2)
+shader_parameter/edge_smooth = 0.01
+shader_parameter/square_color = Color(0, 0, 0, 1)
+shader_parameter/rec_x = 0.375
+shader_parameter/rec_y = 0.525
+shader_parameter/rec_z = 0.53
+shader_parameter/rec_w = 0.475
+
+[node name="lesson_05" type="Node2D"]
+
+[node name="ColorControl" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_80bit")
+metadata/_custom_type_script = "uid://byfyitv6kgyg2"
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect" type="ColorRect" parent="ColorControl"]
+material = SubResource("ShaderMaterial_lxcme")
+layout_mode = 1
+offset_left = 373.0
+offset_top = 161.0
+offset_right = 879.0
+offset_bottom = 493.0
